@@ -1,6 +1,7 @@
 requests==2.32.3
 torch==2.4.1
 pyngrok==5.0.5
-Flask>=2.1.0
-Jinja2>=3.0.0 
+Flask==2.1.0
+Jinja2==3.0.3
 werkzeug==2.0
+opencv-python==4.5.3.56
