@@ -1,6 +1,6 @@
-Flask==2.0.1
 requests==2.26.0
 torch==1.9.0
 opencv-python==4.5.3.56
 pyngrok==5.0.5
-werkzeug==2.1.0
+Flask==1.1.2  
+werkzeug==0.16.1
