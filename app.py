@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-import threading
 import torch
 import cv2
 import os
@@ -25,11 +24,12 @@ def draw_bounding_boxes(image, detections):
             cv2.putText(image, f"{label} {confidence:.2f}", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
     return image
 
+# 显示上传页面的路由
 @app.route('/upload', methods=['GET'])
 def upload_page():
     return render_template('upload.html')
 
-# Flask 路由，用于检测大型卡车
+# 用于检测大型卡车的路由
 @app.route('/detect', methods=['POST'])
 def detect_trucks_api():
     if 'image' not in request.files:
@@ -60,6 +60,6 @@ def detect_trucks_api():
     })
 
 if __name__ == "__main__":
-    # 监听 Cloud Run 提供的端口
+    # 监听本地或提供的端口
     port = int(os.environ.get('PORT', 8080))
     app.run(host="0.0.0.0", port=port)
