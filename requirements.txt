@@ -1,5 +1,5 @@
 requests==2.26.0
-torch==1.9.0
+torch==2.0.0
 opencv-python==4.5.3.56
 pyngrok==5.0.5
 Flask==1.1.2  
